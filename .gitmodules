@@ -1,4 +1,5 @@
 [submodule "alpaka"]
 	path = alpaka
-	url = git://github.com/ComputationalRadiationPhysics/alpaka.git
-	branch = develop
+	url = git://github.com/tdd11235813/alpaka.git
+	#url = git://github.com/ComputationalRadiationPhysics/alpaka.git
+	branch = sincos
