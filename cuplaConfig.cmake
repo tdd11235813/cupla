@@ -93,6 +93,11 @@ list(APPEND CMAKE_MODULE_PATH "${_cupla_ROOT_DIR}")
 #list(APPEND CMAKE_MODULE_PATH "$ENV{ALPAKA_ROOT}")
 
 
+# C++11 standard for whole project (this is required, even though Alpaka sets C++11 too)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+
 ################################################################################
 # Find alpaka
 # NOTE: Do this first, because it declares `list_add_prefix` and `append_recursive_files_add_to_src_group` used later on.
