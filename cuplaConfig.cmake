@@ -93,11 +93,6 @@ list(APPEND CMAKE_MODULE_PATH "${_cupla_ROOT_DIR}")
 #list(APPEND CMAKE_MODULE_PATH "$ENV{ALPAKA_ROOT}")
 
 
-# C++11 standard for whole project (this is required, even though Alpaka sets C++11 too)
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF)
-
 ################################################################################
 # Find alpaka
 # NOTE: Do this first, because it declares `list_add_prefix` and `append_recursive_files_add_to_src_group` used later on.
@@ -224,6 +219,17 @@ if(NOT TARGET cupla)
     # Even if there are no sources CMAKE has to know the language.
     set_target_properties("cupla" PROPERTIES LINKER_LANGUAGE CXX)
 
+    # C++11 standard for whole project (this is required, even though Alpaka sets C++11 too)
+    # properties
+    target_compile_features("cupla"
+        PUBLIC cxx_std_11
+        )
+    set_target_properties("cupla" PROPERTIES
+        CXX_EXTENSIONS OFF
+        CXX_STANDARD_REQUIRED ON
+        )
+
+
     # Compile options.
     message(STATUS "_cupla_COMPILE_OPTIONS_PUBLIC: ${_cupla_COMPILE_OPTIONS_PUBLIC}")
     list(
@@ -231,7 +237,7 @@ if(NOT TARGET cupla)
         _cupla_COMPILE_optionS_PUBLIC
         _cupla_COMPILE_optionS_PUBLIC_LENGTH)
     if("${_cupla_COMPILE_optionS_PUBLIC_LENGTH}")
-        TARGET_COMPILE_optionS(
+        target_compile_options(
             "cupla"
             PUBLIC ${_cupla_COMPILE_optionS_PUBLIC})
     endif()
