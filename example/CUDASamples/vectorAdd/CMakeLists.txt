@@ -35,7 +35,7 @@ SET(_INCLUDE_DIR "../common/")
 SET(_SUFFIXED_INCLUDE_DIR "../common/")
 SET(_SOURCE_DIR "src/")
 
-PROJECT("vecorAdd")
+PROJECT("vectorAdd")
 
 ################################################################################
 # CMake policies
