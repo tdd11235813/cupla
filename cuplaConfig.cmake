@@ -209,12 +209,12 @@ if(NOT TARGET cupla)
     message(STATUS "_cupla_COMPILE_OPTIONS_PUBLIC: ${_cupla_COMPILE_OPTIONS_PUBLIC}")
     list(
         LENGTH
-        _cupla_COMPILE_optionS_PUBLIC
-        _cupla_COMPILE_optionS_PUBLIC_LENGTH)
-    if("${_cupla_COMPILE_optionS_PUBLIC_LENGTH}")
+        _cupla_COMPILE_OPTIONS_PUBLIC
+        _cupla_COMPILE_OPTIONS_PUBLIC_LENGTH)
+    if("${_cupla_COMPILE_OPTIONS_PUBLIC_LENGTH}")
         target_compile_options(
             "cupla"
-            PUBLIC ${_cupla_COMPILE_optionS_PUBLIC})
+            PUBLIC ${_cupla_COMPILE_OPTIONS_PUBLIC})
     endif()
 
     # Compile definitions.
