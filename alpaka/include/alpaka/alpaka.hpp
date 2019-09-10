@@ -7,7 +7,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-
 #pragma once
 
 //#############################################################################
@@ -70,6 +69,7 @@
 #include <alpaka/core/Assert.hpp>
 #include <alpaka/core/Align.hpp>
 #include <alpaka/core/BarrierThread.hpp>
+#include <alpaka/core/BindScope.hpp>
 #include <alpaka/core/BoostPredef.hpp>
 #include <alpaka/core/ClipCast.hpp>
 #include <alpaka/core/Common.hpp>
@@ -188,10 +188,10 @@
 #include <alpaka/idx/Traits.hpp>
 //-----------------------------------------------------------------------------
 // queue
-#include <alpaka/queue/QueueCudaRtAsync.hpp>
-#include <alpaka/queue/QueueCudaRtSync.hpp>
-#include <alpaka/queue/QueueCpuAsync.hpp>
-#include <alpaka/queue/QueueCpuSync.hpp>
+#include <alpaka/queue/QueueCudaRtNonBlocking.hpp>
+#include <alpaka/queue/QueueCudaRtBlocking.hpp>
+#include <alpaka/queue/QueueCpuNonBlocking.hpp>
+#include <alpaka/queue/QueueCpuBlocking.hpp>
 #include <alpaka/queue/Traits.hpp>
 //-----------------------------------------------------------------------------
 // time
